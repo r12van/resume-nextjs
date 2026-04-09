@@ -1,0 +1,449 @@
+/* --- VARIABEL WARNA & FONT --- */
+:root {
+  --bg-primary: #FAFAFA;      /* Putih gading / bersih */
+  --bg-secondary: #EFEBE7;    /* Beige hangat */
+  --text-dark: #2B2B2B;       /* Hitam elegan (bukan hitam pekat) */
+  --text-light: #666666;      /* Abu-abu untuk paragraf */
+  --accent-green: #4A5D23;    /* Hijau botani gelap */
+  --accent-gold: #C5A880;     /* Emas / Champagne untuk aksen */
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+/* --- RESET & DASAR --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .logo, .footer-logo {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--accent-gold);
+  margin: 20px 0 30px 0;
+}
+
+.center-divider {
+  margin: 20px auto 40px auto;
+}
+
+/* --- NAVIGASI --- */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: rgba(250, 250, 250, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  font-size: 24px;
+  color: var(--accent-green);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-gold);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  height: 100vh;
+  /* Menggunakan gambar gratis bernuansa elegan bunga dari Unsplash */
+  background: url('https://images.unsplash.com/photo-1508784411316-02b8cd4d3a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(rgba(250,250,250,0.7), rgba(250,250,250,0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  color: var(--accent-green);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: var(--accent-green);
+  color: var(--bg-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--accent-green);
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: var(--accent-green);
+}
+
+/* --- TENTANG KAMI --- */
+.about {
+  background-color: var(--bg-primary);
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-text {
+  max-width: 800px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: var(--accent-green);
+}
+
+.about-text .divider {
+  margin: 20px auto 30px auto;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* --- LAYANAN --- */
+.services {
+  background-color: var(--bg-secondary);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--accent-green);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.service-card {
+  background-color: var(--bg-primary);
+  padding: 50px 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--accent-green);
+}
+
+.service-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* --- KONTAK --- */
+.contact {
+  background-color: var(--bg-primary);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  color: var(--accent-green);
+}
+
+.contact-info > p {
+  color: var(--text-light);
+  margin-bottom: 40px;
+}
+
+.info-item {
+  margin-bottom: 25px;
+}
+
+.info-item h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  color: var(--accent-gold);
+  font-family: var(--font-body);
+}
+
+.info-item p {
+  color: var(--text-light);
+}
+
+.contact-link {
+  color: var(--accent-green);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.review-badge {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  text-decoration: none; /* Menghilangkan garis bawah bawaan link */
+  transition: all 0.3s ease; /* Animasi halus */
+  border: 1px solid transparent;
+}
+
+/* Efek ketika tombol ulasan disorot mouse / disentuh di HP */
+.review-badge:hover {
+  background-color: var(--accent-gold);
+  color: var(--bg-primary);
+  box-shadow: 0 5px 15px rgba(197, 168, 128, 0.4);
+}
+
+/* --- CUSTOM GOOGLE REVIEW WIDGET (DARK MODE) --- */
+.google-widget-card {
+  margin-top: 30px;
+  padding: 24px;
+  background-color: #222222; /* Latar gelap elegan */
+  border: 1px solid #333333;
+  border-radius: 4px;
+  max-width: 320px;
+  transition: border-color 0.5s ease;
+}
+
+.google-widget-card:hover {
+  border-color: var(--accent-gold); /* Warna wana-accent */
+}
+
+.gw-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.gw-rating-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gw-stars {
+  display: flex;
+  gap: 4px;
+  color: #EAB308; /* Kuning emas bintang */
+}
+
+/* Skeleton untuk bintang */
+.gw-skeleton-star {
+  width: 16px;
+  height: 16px;
+  background-color: #4B5563; /* Abu-abu loader */
+  border-radius: 50%;
+}
+
+.gw-star-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.gw-score {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 1.125rem;
+}
+
+.gw-google-logo {
+  width: 24px;
+  height: 24px;
+}
+
+.gw-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+.gw-link {
+  display: flex;
+  align-items: center;
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.5s ease;
+  opacity: 1;
+}
+
+.gw-link.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.google-widget-card:hover .gw-link {
+  color: #FFFFFF;
+}
+
+.gw-arrow {
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+}
+
+/* Animasi Skeleton Pulse */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.delay-75 { animation-delay: 0.75s; }
+.delay-150 { animation-delay: 1.5s; }
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: var(--accent-green);
+  color: var(--bg-primary);
+  text-align: center;
+  padding: 40px 0;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  color: var(--accent-gold);
+  margin-bottom: 15px;
+}
+
+footer p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* --- RESPONSIVE DESIGN (HP & TABLET) --- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  
+  .nav-links {
+    display: none; /* Disembunyikan untuk tampilan mobile simpel */
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-image {
+    order: -1;
+  }
+}
